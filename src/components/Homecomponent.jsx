@@ -14,6 +14,7 @@ const Homepage = ()=>{
             .catch((error) => console.log(error));
             var response = res.data.results
             setData(response)
+            setIsLoading(false);
             console.log(response)
 
         }
@@ -30,7 +31,12 @@ const Homepage = ()=>{
     
     return (
         <div>
-            <h1>This is the Homepage</h1>
+            {/* {!isLoading && data.map((person,index)=>{
+                return <h5 key = {index}>{person.name}</h5>;
+            })} */}
+            {!isLoading && data.map((actor,index)=>{
+               return <h5 key = {index}>{actor.name}</h5>
+            })}
         </div>
     )
 };
