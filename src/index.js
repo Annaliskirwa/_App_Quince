@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Link, BrowserRouter as Router, Route } from "react-router-dom";
-import Homepage from "./components/Homecomponent";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
-const App = () => {
-  return (
-    <>
-      <Router>
-        <Route path="/" element={Homepage} />
-      </Router>
-    </>
-  );
-};
+import Homepage from './components/Homecomponent';
 
-export default App;
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+    <Routes>
+      <Route exact path="/" element={<Homepage />}/>
+    </Routes>
+  </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
