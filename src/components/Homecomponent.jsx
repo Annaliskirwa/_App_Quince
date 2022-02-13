@@ -10,7 +10,8 @@ const Homepage = ()=>{
             let res = await axios({
                 method: "GET",
                 url: "https://swapi.dev/api/people/"
-            });
+            })
+            .catch((error) => console.log(error));
             var response = res.data.results
             setData(response)
             console.log(response)
