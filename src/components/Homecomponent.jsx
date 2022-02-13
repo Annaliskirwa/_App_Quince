@@ -12,6 +12,7 @@ const Homepage = ()=>{
             console.log(response.results)
             setIsLoading(false);
         })
+        .catch((error)=>console.log(error));
     },[]);
     
     return (
