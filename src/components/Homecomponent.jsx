@@ -4,6 +4,16 @@ const Homepage = ()=>{
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState();
 
+    useEffect(()=>{
+        fetch("https://swapi.dev/api/people/",{})
+        .then((res)=>res.json())
+        .then((response)=>{
+            setData(response.results);
+            console.log(response.results)
+            setIsLoading(false);
+        })
+    },[]);
+    
     return (
         <div>
             <h1>This is the Homepage</h1>
