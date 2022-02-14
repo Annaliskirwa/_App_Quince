@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import PersonPage from "./PersonPage";
 
 const Homepage = ()=>{
     const [isLoading, setIsLoading] = useState(true);
@@ -31,12 +32,14 @@ const Homepage = ()=>{
     
     return (
         <div>
-            {/* {!isLoading && data.map((person,index)=>{
+            <h1>Star wars actors names</h1>
+            {!isLoading && data.map((person,index)=>{
                 return <h5 key = {index}>{person.name}</h5>;
-            })} */}
-            {!isLoading && data.map((actor,index)=>{
-               return <h5 key = {index}>{actor.name}</h5>
             })}
+            {/* {!isLoading && data.map((actor,index)=>{
+               return <h5 key = {index}>{actor.name}</h5>
+            })} */}
+            <PersonPage/>
         </div>
     )
 };
