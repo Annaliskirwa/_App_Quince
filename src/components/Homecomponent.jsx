@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 
 const Homepage = ()=>{
     const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +34,12 @@ const Homepage = ()=>{
         <div>
             <h1>Star wars actors names</h1>
             {!isLoading && data.map((person,index)=>{
-                return <h5 key = {index}>{person.name}</h5>;
+                // return <h5 key = {index}>{person.name}</h5>;
+                return(
+                    <h5 key = {index}>
+                        <Link to = {"/person/${index + 1}"}>{person.name}'s Page</Link>
+                    </h5>
+                )
             })}
             {/* {!isLoading && data.map((actor,index)=>{
                return <h5 key = {index}>{actor.name}</h5>
