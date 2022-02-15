@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react";
 import { Link, BrowserRouter as Router, Route } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
 
 const PersonPage = ({match})=>{
-    const {
-        params: {personId},
-    } = match;
+    // const {
+    //     params: {personId},
+    // } = match;
+    const { personId } = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const[data, setData] = useState();
 

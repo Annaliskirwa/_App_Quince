@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 
 const Homepage = ()=>{
     const [isLoading, setIsLoading] = useState(true);
@@ -37,7 +37,7 @@ const Homepage = ()=>{
                 // return <h5 key = {index}>{person.name}</h5>;
                 return(
                     <h5 key = {index}>
-                        <Link to = {"/person/${index + 1}"}>{person.name}'s Page</Link>
+                        <Link to = {`/person/${index + 1}`}>{person.name}'s Page</Link>
                     </h5>
                 )
             })}
