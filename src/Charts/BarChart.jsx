@@ -34,7 +34,7 @@ const BarChart = ()=>{
             })
         }
         fetchCoins()
-    },[])
+    },[baseUrl,proxyUrl,apikey])
     
     var data = {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
