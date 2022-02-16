@@ -1,8 +1,10 @@
 import React from "react";
-import { Chart as ChartJS, BarElement } from "chart.js";
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
 ChartJS.register(
+    CategoryScale,
+    LinearScale,
     BarElement
 )
 
@@ -30,24 +32,19 @@ const BarChart = ()=>{
             ],
             borderWidth: 1
         }]
-    },
+    }
     var options= {
         maintainAspectRatio: false,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        },
        legend:{
            labels:{
-               fontSize: 26,
+               fontSize: 26
            }
        }
     }
     return(
         <div>
             <Bar
-            date = {data}
+            data= {data}
             options={options}
             height={400}/>
         </div>
