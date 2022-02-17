@@ -13,7 +13,7 @@ const BarChart = ()=>{
     const [chart, setChart] = useState([])
 
     var baseUrl = "https://api.coinranking.com/v2/coins/?limit=10"
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+    var proxyUrl = 'http://localhost:3000/'
     var apikey = "coinranking7ed4e1f315a27dc063016b2d29d4bcc12d2d17ce153f3add"
     
     useEffect(()=>{
