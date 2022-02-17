@@ -14,11 +14,12 @@ import PersonPage from './components/PersonPage';
 
 ReactDOM.render(
   <React.StrictMode>
-     <App />
+    
     <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<Homepage />}/>
       <Route path="/person/:personId" element={<PersonPage/>}/>
+      <Route path = "/charts" element={<App/>}/>
     </Routes>
   </BrowserRouter>
   </React.StrictMode>,

@@ -13,7 +13,6 @@ import PieChart from './Charts/PieChart';
 function App() {
   return (
     <div className="App">
-      <Homepage/>
       <h1>Chart js and restful apis</h1>
       <h2>Bar Chart</h2>
       <BarChart/>

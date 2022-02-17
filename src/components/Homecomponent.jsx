@@ -44,6 +44,7 @@ const Homepage = ()=>{
             {/* {!isLoading && data.map((actor,index)=>{
                return <h5 key = {index}>{actor.name}</h5>
             })} */}
+            <Link to = "/charts">Check out charts</Link>
         </div>
     )
 };
