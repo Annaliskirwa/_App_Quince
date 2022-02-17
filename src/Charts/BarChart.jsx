@@ -14,46 +14,47 @@ const BarChart = ()=>{
     const [chart, setChart] = useState([])
 
     var baseUrl = "https://api.coinranking.com/v2/coins/?limit=10"
-    var proxyUrl = 'http://localhost:3000/'
+    // var proxyUrl = 'http://localhost:3000/'
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
     var apikey = "coinranking7ed4e1f315a27dc063016b2d29d4bcc12d2d17ce153f3add"
 
-    useEffect(()=>{
-        const fetchCoins = async()=>{
-            let res = await axios({
-                method: "GET",
-                url: `${proxyUrl}${baseUrl}`,
-                headers:{
-                    'Content-Type': 'application/json',
-                    'x-access-token':'coinranking7ed4e1f315a27dc063016b2d29d4bcc12d2d17ce153f3add',
-                    'Access-Control-Allow-Origin':'*'
-                }
-
-            });
-            console.log(res)
-
-        }
-        fetchCoins()
-    },[])
-    
     // useEffect(()=>{
     //     const fetchCoins = async()=>{
-    //         await fetch(`${proxyUrl}${baseUrl}`,{
-    //             method: 'GET',
+    //         let res = await axios({
+    //             method: "GET",
+    //             url: `${proxyUrl}${baseUrl}`,
     //             headers:{
     //                 'Content-Type': 'application/json',
-    //                 'x-access-token':`${apikey}`,
+    //                 'x-access-token':'coinranking7ed4e1f315a27dc063016b2d29d4bcc12d2d17ce153f3add',
     //                 'Access-Control-Allow-Origin':'*'
     //             }
-    //         }).then((response)=>{
-    //             response.json().then((json)=>{
-    //                 console.log(json)
-    //             })
-    //         }).catch(error=>{
-    //             console.log(error);
-    //         })
+
+    //         });
+    //         console.log(res)
+
     //     }
     //     fetchCoins()
-    // },[baseUrl,proxyUrl,apikey])
+    // },[])
+    
+    useEffect(()=>{
+        const fetchCoins = async()=>{
+            await fetch(`${proxyUrl}${baseUrl}`,{
+                method: 'GET',
+                headers:{
+                    'Content-Type': 'application/json',
+                    'x-access-token':`${apikey}`,
+                    'Access-Control-Allow-Origin':'*'
+                }
+            }).then((response)=>{
+                response.json().then((json)=>{
+                    console.log(json)
+                })
+            }).catch(error=>{
+                console.log(error);
+            })
+        }
+        fetchCoins()
+    },[baseUrl,proxyUrl,apikey])
     
     var data = {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
