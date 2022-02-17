@@ -48,6 +48,7 @@ const BarChart = ()=>{
             }).then((response)=>{
                 response.json().then((json)=>{
                     console.log(json)
+                    setChart(json.data)
                 })
             }).catch(error=>{
                 console.log(error);
@@ -57,10 +58,10 @@ const BarChart = ()=>{
     },[baseUrl,proxyUrl,apikey])
     
     var data = {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: chart?.coins.map(x => x.name),
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label:`${chart?.coins.length} Coins available`,
+            data: chart?.coins.map(x => x.price),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
