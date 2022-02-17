@@ -58,10 +58,10 @@ const BarChart = ()=>{
     },[baseUrl,proxyUrl,apikey])
     
     var data = {
-        labels: chart?.coins.map(x => x.name),
+        labels: chart?.coins?.map(x => x.name),
         datasets: [{
-            label:`${chart?.coins.length} Coins available`,
-            data: chart?.coins.map(x => x.price),
+            label:`${chart?.coins?.length} Coins available`,
+            data: chart?.coins?.map(x => x.price),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
